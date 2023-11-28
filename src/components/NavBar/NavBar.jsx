@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TiThList } from "react-icons/ti";
-import "./TopNav.css";
+import "./NavBar.css";
 import { useDispatch, useSelector} from "react-redux";
 import { selectData } from "../../Actions/DataAction";
 
@@ -21,7 +21,7 @@ const getOrder = () => {
     return "priority";
   }
 }
-const TopNav = () => {
+const NavBar = () => {
   const [displayOnClick, setDisplayOnClick] = useState(false);
   const dispatch = useDispatch();
   const {allTickets, allUser} = useSelector(state => state.DataReducer);
@@ -87,4 +87,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default NavBar;

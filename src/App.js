@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import './App.css';
-import TopNav from './components/TopNav/TopNav';
-// import Card from './components/Card/Card';
 import DashView from './components/DashBoard/DashView';
 import { useDispatch, useSelector} from 'react-redux'
 import { fetchAllData } from './Actions/DataAction';
-import Loading from './components/Loading/Loading';
+import NavBar from './components/NavBar/NavBar.jsx';
 
 const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   const {allTickets} = useSelector(state => state.DataReducer);
    
   useEffect(() => {
@@ -17,11 +15,11 @@ const App = () => {
 
   return allTickets ? (
     <div style={{paddingTop : "10px"}} >
-      <TopNav/>
+      <NavBar/>
       <hr style={{marginTop : "10px"}} />
       <DashView/>
     </div>
-  ) : <Loading/>
+  ) : <p>No Data</p>
 }
 
 export default App
